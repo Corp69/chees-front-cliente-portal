@@ -1,0 +1,58 @@
+<div class="p-4">
+  <p-panel>
+    <div class="flex justify-content-center">
+      <p-card header="Cheese Pizza" subheader="MENÚ PRINCIPAL" [style]="{ width: '100%', maxWidth: '800px' }">
+        <ng-template pTemplate="header">
+          <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" />
+        </ng-template>
+        <p class="text-center mb-4 text-surface-600">Selecciona una opción para gestionar tus facturas electrónicas</p>
+        <div class="grid">
+          <div class="col-12 md:col-6">
+            <h4 class="text-center mb-3">SOLICITAR FACTURA</h4>
+            <p-button
+              (click)="irCapturardatos()"
+              [outlined]="true"
+              label="Facturar"
+              icon="pi pi-file-edit"
+              severity="warn"
+              styleClass="w-full"
+              pTooltip="Genera una nueva factura electrónica para tus ventas"
+              tooltipPosition="top"
+            ></p-button>
+          </div>
+          <div class="col-12 md:col-6">
+            <h4 class="text-center mb-3">REIMPRIMIR FACTURA</h4>
+            <p-button
+              (click)="irPDF()"
+              [outlined]="true"
+              label="Reimprimir Factura"
+              icon="pi pi-print"
+              severity="info"
+              styleClass="w-full"
+              pTooltip="Descarga o imprime una factura previamente emitida"
+              tooltipPosition="top"
+            ></p-button>
+          </div>
+        </div>
+        <ng-template pTemplate="footer">
+          <p class="text-center text-surface-500 m-0">Próximamente más opciones.</p>
+        </ng-template>
+      </p-card>
+    </div>
+  </p-panel>
+</div>
+
+
+  <div
+      class="layout-footer"
+      style="display: flex; justify-content: center; align-items: center; text-align: center; padding: 1rem; margin-top: auto;">
+    ©2026 CopyRight
+    <a
+      routerLink="/AriesERP/principal"
+      rel="noopener noreferrer"
+      class="text-primary font-bold hover:underline"
+      style="margin-left: 5px;"
+      >
+      Cheese Pizza .
+    </a>
+  </div>
