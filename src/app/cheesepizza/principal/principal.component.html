@@ -1,3 +1,11 @@
+<p-blockUI [blocked]="Blocked()"></p-blockUI>
+<p-toast position="top-center" key="tc"></p-toast>
+<!--AriesERP - Mensaje de carga -->
+@if(Blocked()) { <cheese-msj-carga /> }
+
+
+
+
 <div class="p-4">
   <p-panel>
     <div class="flex justify-content-center">
