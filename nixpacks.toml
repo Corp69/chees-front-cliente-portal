@@ -10,9 +10,19 @@
 [phases.setup]
     nixPkgs = ['...', 'jq'] # jq is needed to parse the outputPath from our angular.json file
 
+# install dependencies
+[phases.install]
+    dependsOn = ['setup']
+    cmds = ['npm ci']
+
+# build the Angular app
+[phases.build]
+    dependsOn = ['install']
+    cmds = ['npm run build']
+
 # get the output path from our angular.json file
 [phases.output]
-    dependsOn = ['setup']
+    dependsOn = ['build']
     cmds = [
         'jq -r "[.projects[] | .architect.build.options.outputPath][0]" angular.json > angular_output_path' # save the resulting value into a file so that we can load the file into a variable in the final image
     ]
